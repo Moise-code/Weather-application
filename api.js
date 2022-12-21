@@ -1,6 +1,6 @@
 // adding the api key for our appliication
 
-const Key = 'mHyjA5GtqVAJ9ehXjZlGvlXvkWVOKjM0';
+const Key = 'sCUNr9If9amuAkGGmxeQFgVxdiTCFDFA';
 
 // adding the fnction for getting the weather condition
 
