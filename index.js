@@ -1,6 +1,8 @@
 const form = document.querySelector('.change-location');
 const card = document.querySelector('.card');
 const cardDetails = document.querySelector('.details');
+const time = document.querySelector('img.time');
+const icon = document.querySelector('.icon img');
 
 
 // adding the function for getting updating the User interface
@@ -8,7 +10,6 @@ const cardDetails = document.querySelector('.details');
 const updateUi = (data) =>{
     const cityDets = data.cityDets;
     const weather = data.weather;
-
     cardDetails.innerHTML =`
     
     <h5 class="my-3">${cityDets.EnglishName}</h5>
@@ -19,6 +20,22 @@ const updateUi = (data) =>{
     </div>
 
     `;
+
+    // updating the night/day & icon images
+
+const iconSrc =`img/icons/${weather.WeatherIcon}.svg`;
+icon.setAttribute('src', iconSrc);
+
+  let timeSrc = null;
+  if(weather.IsDayTime){
+    timeSrc = 'img/day.svg';
+  } else{
+    timeSrc = 'img/night.svg'
+  }
+  time.setAttribute('src', timeSrc);
+
+    //remove the d-none class
+
     if(card.classList.contains('d-none')){
         card.classList.remove('d-none')
     }
