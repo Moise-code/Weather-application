@@ -1,17 +1,39 @@
 body {
-    background: #eeedec;
-    letter-spacing: 0.2em;
-    font-size: 0.8em;
-  }
-  
-  .container {
-    max-width: 400px;
-  }
-  .icon{
-    position: relative;
-    top: -50px;
-    width: 100px;
-    border-radius: 50%;
-    margin-bottom: 0px;
-  }
-  
+  background: #eeedec;
+  letter-spacing: 0.2em;
+  font-size: 0.8em;
+}
+
+.container {
+  max-width: 400px;
+  padding-top:2rem;
+}
+.icon{
+  position: relative;
+  top: -50px;
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 0px;
+}
+.texto{
+  position: absolute;
+  top: 0;
+  width: 200px;
+  margin-top: 1rem;
+  margin-right:.2rem;
+  right: 0;
+  font-size: 10px;
+  font-weight: bold;
+  color: White;
+  background: red;
+  padding: .2rem;
+  border-radius: 5px;
+  visibility: hidden;
+  transition: ease-in-out .6s;
+}
+.close{
+  transition: ease-in-out .5s;
+}
+.open{
+  transition: ease-in .5s;
+}
