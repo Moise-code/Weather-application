@@ -3,7 +3,9 @@ const card = document.querySelector('.card');
 const cardDetails = document.querySelector('.details');
 const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
-const error = document.querySelector(".texto");
+const error = document.querySelector('.texto');
+const success = document.querySelector('.success')
+
 
 const showError = () =>{
     error.style.visibility = "visible";
@@ -16,6 +18,16 @@ const hideError = () =>{
     error.classList.add('close');
 }
 setTimeout("hideError()", 3000);
+
+const showSuccess = () => {
+    success.style.visibility = "visible";
+    success.classList.add("open");
+  };
+  
+  const hideSuccess = () => {
+    success.style.visibility = "hidden";
+    success.classList.add("close");
+  };
 
 // adding the function for getting updating the User interface
 
@@ -74,4 +86,9 @@ form.addEventListener('submit', e =>{
     }).catch(error =>{
         console.log(error);
     })
+        
+  setTimeout("showSuccess()", 1000);
+  showSuccess();
+  setTimeout("hideSuccess()", 4000);
+  hideSuccess();
 });
