@@ -37,3 +37,20 @@ body {
 .open{
   transition: ease-in .5s;
 }
+
+.success{
+  position: absolute;
+  top: 0;
+  width: 200px;
+  margin-top: 1rem;
+  margin-right:.2rem;
+  right: 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: White;
+  background: green;
+  padding: .2rem;
+  border-radius: 5px;
+  visibility: hidden;
+  transition: ease-in-out 1s;
+}
