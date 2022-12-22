@@ -3,9 +3,22 @@ const card = document.querySelector('.card');
 const cardDetails = document.querySelector('.details');
 const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
+const error = document.querySelector(".texto");
 
+const showError = () =>{
+    error.style.visibility = "visible";
+    error.classList.add('open');
+}
+setTimeout("showError()", 1500)
+
+const hideError = () =>{
+    error.style.visibility = "hidden";
+    error.classList.add('close');
+}
+setTimeout("hideError()", 3000);
 
 // adding the function for getting updating the User interface
+
 
 const updateUi = (data) =>{
     const cityDets = data.cityDets;
