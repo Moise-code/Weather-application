@@ -5,6 +5,7 @@ const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
 const error = document.querySelector('.texto');
 const success = document.querySelector('.success')
+const localSuccess = document.querySelector('.success')
 
 
 const showError = () =>{
@@ -17,7 +18,7 @@ const hideError = () =>{
     error.style.visibility = "hidden";
     error.classList.add('close');
 }
-setTimeout("hideError()", 3000);
+setTimeout("hideError()", 4000);
 
 const showSuccess = () => {
     success.style.visibility = "visible";
@@ -29,6 +30,14 @@ const showSuccess = () => {
     success.classList.add("close");
   };
 
+  const localSuccessfull = () =>{
+    localSuccess.style.visibility = "visible";
+    localSuccess.classList.add(open)
+  } 
+  const localStorageError = () =>{
+    localSuccess.style.visibility = "visible";
+    localSuccess.classList.add('close');
+  }
 // adding the function for getting updating the User interface
 
 
