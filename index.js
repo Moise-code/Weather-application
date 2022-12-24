@@ -48,11 +48,10 @@ const updateUi = (data) =>{
 
     // updating the night/day & icon images
 
-const iconSrc =`img/icons/${weather.WeatherIcon}.svg`;
-icon.setAttribute('src', iconSrc);
+let iconsrc = `img/icons/${weather.WeatherIcon}.svg`
 
-  let timeSrc = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg'
-  time.setAttribute('src', timeSrc);
+let timesrc = weather.IsDayTime? 'img/day.svg' : 'img/night.svg';
+time.setAttribute('src', timesrc);
 
     //remove the d-none class
 
@@ -86,9 +85,21 @@ form.addEventListener('submit', e =>{
     }).catch(error =>{
         console.log(error);
     })
+
+    // set localStorage
+
+    localStorage.setItem('city', city);
         
   setTimeout("showSuccess()", 1000);
   showSuccess();
   setTimeout("hideSuccess()", 4000);
   hideSuccess();
 });
+if(localStorage.getItem('city')){
+    updateCity(localStorage.getItem('city'))
+    .then(data =>{
+        updateUi(data);
+    }).catch(error =>{
+        console.log(error);
+    })
+}
