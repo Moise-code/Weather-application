@@ -1,3 +1,5 @@
+// declaring the variables of to be used in the application.
+
 const form = document.querySelector('.change-location');
 const card = document.querySelector('.card');
 const cardDetails = document.querySelector('.details');
@@ -6,7 +8,10 @@ const icon = document.querySelector('.icon img');
 const error = document.querySelector('.texto');
 const success = document.querySelector('.success')
 const localSuccess = document.querySelector('.success')
+// creating the class to refer to the class created in the api.js file
 const groupapi = new Groupapi();
+
+// creating the popup messages on the page.
 
 const showError = () =>{
     error.style.visibility = "visible";
@@ -57,7 +62,8 @@ const updateUi = (data) =>{
 
     // updating the night/day & icon images
 
-let iconsrc = `img/icons/${weather.WeatherIcon}.svg`
+let iconsrc = `img/icons/${weather.WeatherIcon}.svg`;
+icon.setAttribute('src', iconsrc)
 
 let timesrc = weather.IsDayTime? 'img/day.svg' : 'img/night.svg';
 time.setAttribute('src', timesrc);
