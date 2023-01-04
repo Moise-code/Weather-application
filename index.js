@@ -6,7 +6,7 @@ const icon = document.querySelector('.icon img');
 const error = document.querySelector('.texto');
 const success = document.querySelector('.success')
 const localSuccess = document.querySelector('.success')
-
+const groupapi = new Groupapi();
 
 const showError = () =>{
     error.style.visibility = "visible";
@@ -72,16 +72,10 @@ time.setAttribute('src', timesrc);
 
 // addign the function to get the current information of the city and its condition
 
-const updateCity = async (city) =>{
+// const updateCity = async (city) =>{
 
-    const cityDets = await getCity(city);
-    const weather = await getWeather(cityDets.Key);
-
-    return{
-        cityDets : cityDets,
-        weather : weather
-    }
-}
+     
+// }
 form.addEventListener('submit', e =>{
     e.preventDefault();
 
@@ -89,7 +83,7 @@ form.addEventListener('submit', e =>{
     const city = form.city.value.trim();
     form.reset();
    
-    updateCity(city).then(data =>{
+    groupapi.updateCity(city).then(data =>{
        updateUi(data)
     }).catch(error =>{
         console.log(error);
@@ -105,7 +99,7 @@ form.addEventListener('submit', e =>{
   hideSuccess();
 });
 if(localStorage.getItem('city')){
-    updateCity(localStorage.getItem('city'))
+    groupapi.updateCity(localStorage.getItem('city'))
     .then(data =>{
         updateUi(data);
     }).catch(error =>{
